@@ -421,17 +421,180 @@ export default function Skills() {
           </p>
         </div>
 
-        {/* 技能水平图表 */}
+        {/* 技能分类展示 */}
         <section className="mb-20">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold mb-2">
+            <h2 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
               {content[language].skills.title}
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
               {content[language].skills.subtitle}
             </p>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+
+          {/* 技能分组 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all transform hover:-translate-y-1">
+              <h3 className="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400 flex items-center">
+                <span className="mr-2">💻</span>
+                {language === 'zh' ? '开发技能' : 'Development Skills'}
+              </h3>
+              <div className="space-y-4">
+                {content[language].skills.items
+                  .filter((skill) =>
+                    ['React', 'Node.js', 'TypeScript', 'Python'].includes(
+                      skill.name
+                    )
+                  )
+                  .map((skill) => (
+                    <div key={skill.name} className="relative pt-1">
+                      <div className="flex items-center justify-between mb-1">
+                        <div>
+                          <span className="text-sm font-semibold inline-block text-gray-800 dark:text-gray-200">
+                            {skill.name}
+                          </span>
+                          <span className="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                            {skill.description}
+                          </span>
+                        </div>
+                        <div className="text-right">
+                          <span className="text-xs font-semibold inline-block text-blue-600 dark:text-blue-400">
+                            {skill.level}%
+                          </span>
+                        </div>
+                      </div>
+                      <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200 dark:bg-gray-700">
+                        <div
+                          style={{
+                            width: `${skill.level}%`,
+                            backgroundColor: skill.color,
+                          }}
+                          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center rounded-l-full rounded-r-full transition-all duration-500"></div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all transform hover:-translate-y-1">
+              <h3 className="text-xl font-semibold mb-4 text-teal-600 dark:text-teal-400 flex items-center">
+                <span className="mr-2">⛓️</span>
+                {language === 'zh' ? '区块链技能' : 'Blockchain Skills'}
+              </h3>
+              <div className="space-y-4">
+                {content[language].skills.items
+                  .filter((skill) =>
+                    ['Solidity', 'Web3.js'].includes(skill.name)
+                  )
+                  .map((skill) => (
+                    <div key={skill.name} className="relative pt-1">
+                      <div className="flex items-center justify-between mb-1">
+                        <div>
+                          <span className="text-sm font-semibold inline-block text-gray-800 dark:text-gray-200">
+                            {skill.name}
+                          </span>
+                          <span className="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                            {skill.description}
+                          </span>
+                        </div>
+                        <div className="text-right">
+                          <span className="text-xs font-semibold inline-block text-teal-600 dark:text-teal-400">
+                            {skill.level}%
+                          </span>
+                        </div>
+                      </div>
+                      <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200 dark:bg-gray-700">
+                        <div
+                          style={{
+                            width: `${skill.level}%`,
+                            backgroundColor: skill.color,
+                          }}
+                          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center rounded-l-full rounded-r-full transition-all duration-500"></div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all transform hover:-translate-y-1">
+              <h3 className="text-xl font-semibold mb-4 text-amber-600 dark:text-amber-400 flex items-center">
+                <span className="mr-2">🗄️</span>
+                {language === 'zh' ? '数据库技能' : 'Database Skills'}
+              </h3>
+              <div className="space-y-4">
+                {content[language].skills.items
+                  .filter((skill) => ['MySQL'].includes(skill.name))
+                  .map((skill) => (
+                    <div key={skill.name} className="relative pt-1">
+                      <div className="flex items-center justify-between mb-1">
+                        <div>
+                          <span className="text-sm font-semibold inline-block text-gray-800 dark:text-gray-200">
+                            {skill.name}
+                          </span>
+                          <span className="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                            {skill.description}
+                          </span>
+                        </div>
+                        <div className="text-right">
+                          <span className="text-xs font-semibold inline-block text-amber-600 dark:text-amber-400">
+                            {skill.level}%
+                          </span>
+                        </div>
+                      </div>
+                      <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200 dark:bg-gray-700">
+                        <div
+                          style={{
+                            width: `${skill.level}%`,
+                            backgroundColor: skill.color,
+                          }}
+                          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center rounded-l-full rounded-r-full transition-all duration-500"></div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all transform hover:-translate-y-1">
+              <h3 className="text-xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400 flex items-center">
+                <span className="mr-2">🚀</span>
+                {language === 'zh' ? 'DevOps 技能' : 'DevOps Skills'}
+              </h3>
+              <div className="space-y-4">
+                {content[language].skills.items
+                  .filter((skill) => ['Docker'].includes(skill.name))
+                  .map((skill) => (
+                    <div key={skill.name} className="relative pt-1">
+                      <div className="flex items-center justify-between mb-1">
+                        <div>
+                          <span className="text-sm font-semibold inline-block text-gray-800 dark:text-gray-200">
+                            {skill.name}
+                          </span>
+                          <span className="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                            {skill.description}
+                          </span>
+                        </div>
+                        <div className="text-right">
+                          <span className="text-xs font-semibold inline-block text-indigo-600 dark:text-indigo-400">
+                            {skill.level}%
+                          </span>
+                        </div>
+                      </div>
+                      <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200 dark:bg-gray-700">
+                        <div
+                          style={{
+                            width: `${skill.level}%`,
+                            backgroundColor: skill.color,
+                          }}
+                          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center rounded-l-full rounded-r-full transition-all duration-500"></div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+
+          {/* 技能图表 */}
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all">
             <SkillChart data={content[language].skills.items} />
           </div>
         </section>
@@ -439,7 +602,7 @@ export default function Skills() {
         {/* 技能认证 */}
         <section className="mb-20">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold mb-2">
+            <h2 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
               {content[language].certifications.title}
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
@@ -456,7 +619,7 @@ export default function Skills() {
         {/* 项目案例 */}
         <section className="mb-20">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold mb-2">
+            <h2 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
               {content[language].projects.title}
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
@@ -473,14 +636,14 @@ export default function Skills() {
         {/* 学习时间线 */}
         <section>
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold mb-2">
+            <h2 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
               {content[language].timeline.title}
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
               {content[language].timeline.subtitle}
             </p>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all">
             <Timeline items={content[language].timeline.items} />
           </div>
         </section>
