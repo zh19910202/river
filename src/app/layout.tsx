@@ -31,61 +31,10 @@ const localBusiness = {
   url: 'https://www.riversnow.xyz',
   areaServed: ['宣城', '芜湖', '合肥', '南京'],
   priceRange: '¥¥',
-  sameAs: [
-    'https://github.com/yourgithub', // 替换为您的 GitHub 链接
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    email: 'riversnow.xyz@gmail.com',
-    contactType: 'customer service',
-    availableLanguage: ['Chinese', 'English'],
-  },
-  makesOffer: [
-    {
-      '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: 'Web3 开发服务',
-        description: '区块链应用开发、智能合约开发、DApp 开发',
-      },
-    },
-    {
-      '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: '网站开发服务',
-        description: '企业网站开发、电商平台开发、Web 应用开发',
-      },
-    },
-  ],
-}
-
-// 定义个人信息的结构化数据
-const person = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Snow',
-  jobTitle: 'Web3 全栈开发工程师',
-  description: '专注于区块链技术和全栈开发的软件工程师',
-  url: 'https://www.riversnow.xyz',
-  sameAs: [
-    'https://github.com/yourgithub', // 替换为您的 GitHub 链接
-  ],
-  knowsAbout: [
-    'Web3',
-    'Blockchain',
-    'Smart Contracts',
-    'Full Stack Development',
-    'DApp Development',
-  ],
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.riversnow.xyz'),
-  title: {
-    template: '%s | Web3 开发者 - Snow',
-    default: 'Web3 开发者 | 安徽宣城软件开发工程师',
-  },
+  title: 'Web3 开发者 | 安徽宣城软件开发工程师',
   description:
     '宣城本地专业的Web3全栈开发工程师，专注于区块链技术、智能合约开发和DApp应用开发，为皖南地区企业提供完整的区块链解决方案。',
   keywords: [
@@ -99,18 +48,11 @@ export const metadata: Metadata = {
     '区块链工程师',
     '宣城技术外包',
     '安徽软件开发',
-    '智能合约开发',
-    'DApp开发',
-    '区块链咨询',
-    '网站建设',
   ],
-  authors: [{ name: 'Snow', url: 'https://www.riversnow.xyz' }],
-  creator: 'Snow',
-  publisher: 'Snow',
+  authors: [{ name: 'Snow' }],
   robots: {
     index: true,
     follow: true,
-    nocache: true,
     googleBot: {
       index: true,
       follow: true,
@@ -159,11 +101,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' }, // 主 SVG favicon
+      // 可选：为兼容性提供备用 .ico 或 .png
       { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
     ],
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
   },
 }
 
@@ -181,11 +123,10 @@ export default function RootLayout({
         <meta name="geo.placename" content="Xuancheng" />
         <meta name="geo.position" content="30.9454;118.7589" />
         <meta name="ICBM" content="30.9454, 118.7589" />
+        <meta name="baidu-site-verification" content="codeva-6s7DLz5s61" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([localBusiness, person]),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
         />
       </head>
       <body className={inter.className}>
