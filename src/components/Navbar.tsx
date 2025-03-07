@@ -186,7 +186,7 @@ const Navbar = () => {
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActivePath(item.path)
                     ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                    : 'text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50'
                 }`}>
                 {item.label}
               </Link>
@@ -242,64 +242,72 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div
         id="mobile-menu"
-        className={`md:hidden fixed inset-x-0 top-16 glass-effect transform transition-all duration-300 ease-in-out ${
-          isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-        }`}
-        aria-hidden={!isOpen}>
-        <div className="p-4 space-y-3">
-          {[
-            { path: '/', label: navItems[language].home },
-            { path: '/skills', label: navItems[language].skills },
-            { path: '/projects', label: navItems[language].projects },
-            { path: '/contact', label: navItems[language].contact },
-          ].map((item) => (
-            <Link
-              key={item.path}
-              href={item.path}
-              className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                isActivePath(item.path)
-                  ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50'
-              }`}
+        className={`md:hidden fixed inset-0 top-16 z-40 ${
+          isOpen ? 'block' : 'hidden'
+        }`}>
+        {/* 添加一个半透明的背景遮罩 */}
+        <div
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        />
+
+        {/* 菜单内容 */}
+        <div className="relative h-full w-full max-w-sm ml-auto bg-white dark:bg-gray-900 shadow-xl">
+          <div className="p-4 space-y-3 overflow-y-auto max-h-[calc(100vh-4rem)]">
+            {[
+              { path: '/', label: navItems[language].home },
+              { path: '/skills', label: navItems[language].skills },
+              { path: '/projects', label: navItems[language].projects },
+              { path: '/contact', label: navItems[language].contact },
+            ].map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
+                className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  isActivePath(item.path)
+                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                    : 'text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                }`}
+                onClick={() => setIsOpen(false)}>
+                {item.label}
+              </Link>
+            ))}
+
+            <div className="h-px bg-gray-200 dark:bg-gray-700 my-4" />
+
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center px-4 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200"
               onClick={() => setIsOpen(false)}>
-              {item.label}
-            </Link>
-          ))}
+              <GithubIcon />
+              <span className="ml-2">GitHub</span>
+            </a>
 
-          <div className="h-px bg-gray-200 dark:bg-gray-700 my-4" />
+            <button
+              onClick={() => {
+                toggleTheme()
+                setIsOpen(false)
+              }}
+              className="flex items-center w-full px-4 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200">
+              {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+              <span className="ml-2">
+                {theme === 'light' ? '切换到暗色模式' : '切换到亮色模式'}
+              </span>
+            </button>
 
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center px-4 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200"
-            onClick={() => setIsOpen(false)}>
-            <GithubIcon />
-            <span className="ml-2">GitHub</span>
-          </a>
-
-          <button
-            onClick={() => {
-              toggleTheme()
-              setIsOpen(false)
-            }}
-            className="flex items-center w-full px-4 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200">
-            {theme === 'light' ? <MoonIcon /> : <SunIcon />}
-            <span className="ml-2">
-              {theme === 'light' ? '切换到暗色模式' : '切换到亮色模式'}
-            </span>
-          </button>
-
-          <button
-            onClick={() => {
-              toggleLanguage()
-              setIsOpen(false)
-            }}
-            className="flex items-center w-full px-4 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200">
-            <span>
-              {language === 'zh' ? 'Switch to English' : '切换到中文'}
-            </span>
-          </button>
+            <button
+              onClick={() => {
+                toggleLanguage()
+                setIsOpen(false)
+              }}
+              className="flex items-center w-full px-4 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200">
+              <span>
+                {language === 'zh' ? 'Switch to English' : '切换到中文'}
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
