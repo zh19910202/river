@@ -95,7 +95,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'your-google-verification-code',
-    baidu: 'your-baidu-verification-code',
+  },
+  other: {
+    'baidu-site-verification': 'your-baidu-verification-code',
   },
 }
 
@@ -114,6 +116,11 @@ export default function RootLayout({
         <meta name="geo.placename" content="Xuancheng" />
         <meta name="geo.position" content="30.9454;118.7589" />
         <meta name="ICBM" content="30.9454, 118.7589" />
+        {/* 百度站长验证 */}
+        <meta
+          name="baidu-site-verification"
+          content="your-baidu-verification-code"
+        />
         {/* 添加结构化数据 */}
         <script
           type="application/ld+json"
