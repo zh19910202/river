@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 import HeroAnimation from '@/components/HeroAnimation'
+import ContactCTA from '@/components/ContactCTA'
 
 export default function Home() {
   const { language } = useLanguage()
@@ -393,6 +394,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Add ContactCTA at the end */}
+      <ContactCTA />
     </div>
   )
 }

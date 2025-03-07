@@ -21,7 +21,7 @@ export default function Contact() {
       email: {
         title: '邮箱',
         description: '发送邮件至：',
-        address: 'zhouhuan19910202@gmail.com', // 替换为你的实际邮箱
+        address: 'riversnow.xyz@gmail.com', // 替换为你的实际邮箱
       },
     },
     en: {
