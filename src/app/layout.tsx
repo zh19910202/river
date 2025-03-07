@@ -1,11 +1,11 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Navbar from '@/components/Navbar'
-import { ThemeProvider } from '@/context/ThemeContext'
-import { LanguageProvider } from '@/context/LanguageContext'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Navbar from '@/components/Navbar';
+import { ThemeProvider } from '@/context/ThemeContext';
+import { LanguageProvider } from '@/context/LanguageContext';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 // 定义宣城地区的本地化信息
 const localBusiness = {
@@ -31,7 +31,7 @@ const localBusiness = {
   url: 'https://www.riversnow.xyz',
   areaServed: ['宣城', '芜湖', '合肥', '南京'],
   priceRange: '¥¥',
-}
+};
 
 export const metadata: Metadata = {
   title: 'Web3 开发者 | 安徽宣城软件开发工程师',
@@ -99,29 +99,38 @@ export const metadata: Metadata = {
   other: {
     'baidu-site-verification': 'your-baidu-verification-code',
   },
-}
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' }, // 主 SVG favicon
+      // 可选：为兼容性提供备用 .ico 或 .png
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+  },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="format-detection" content="telephone=no" />
-        {/* 地理位置标签 */}
-        <meta name="geo.region" content="CN-34" /> {/* 安徽省代码 */}
+        <meta name="geo.region" content="CN-34" />
         <meta name="geo.placename" content="Xuancheng" />
         <meta name="geo.position" content="30.9454;118.7589" />
         <meta name="ICBM" content="30.9454, 118.7589" />
-        {/* 百度站长验证 */}
         <meta
           name="baidu-site-verification"
           content="your-baidu-verification-code"
         />
-        {/* 添加结构化数据 */}
+        {/* 
+          如果需要手动添加 SVG favicon，可以在此处添加，但推荐使用 metadata.icons：
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
@@ -136,5 +145,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
