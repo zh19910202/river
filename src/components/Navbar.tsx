@@ -101,12 +101,14 @@ const Navbar = () => {
         skills: '技能',
         projects: '项目',
         contact: '联系',
+        ningguoServices: '宁国服务',
       },
       en: {
         home: 'Home',
         skills: 'Skills',
         projects: 'Projects',
         contact: 'Contact',
+        ningguoServices: 'Ningguo Services',
       },
     }),
     []
@@ -179,6 +181,10 @@ const Navbar = () => {
               { path: '/skills', label: navItems[language].skills },
               { path: '/projects', label: navItems[language].projects },
               { path: '/contact', label: navItems[language].contact },
+              {
+                path: '/ningguo-services',
+                label: navItems[language].ningguoServices,
+              },
             ].map((item) => (
               <Link
                 key={item.path}
@@ -259,6 +265,10 @@ const Navbar = () => {
               { path: '/skills', label: navItems[language].skills },
               { path: '/projects', label: navItems[language].projects },
               { path: '/contact', label: navItems[language].contact },
+              {
+                path: '/ningguo-services',
+                label: navItems[language].ningguoServices,
+              },
             ].map((item) => (
               <Link
                 key={item.path}

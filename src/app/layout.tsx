@@ -7,52 +7,110 @@ import { LanguageProvider } from '@/context/LanguageContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
-// 定义宣城地区的本地化信息
+// 定义宁国地区的本地化信息
 const localBusiness = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'Web3 开发者 - Snow',
+  name: '宁国网站开发 - Snow',
   image: 'https://www.riversnow.xyz/logo.png',
   description:
-    '安徽宣城专业的Web3全栈开发工程师，提供区块链开发、智能合约开发等服务',
+    '安徽宣城宁国市专业的全栈开发工程师，提供本地网站搭建、小程序开发、区块链应用服务',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '宣城市',
-    addressLocality: '宣城',
-    addressRegion: '安徽省',
-    postalCode: '242000',
+    streetAddress: '宁国市',
+    addressLocality: '宁国',
+    addressRegion: '宣城市安徽省',
+    postalCode: '242300',
     addressCountry: 'CN',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '30.9454',
-    longitude: '118.7589',
+    latitude: '30.6339',
+    longitude: '118.9831',
   },
   url: 'https://www.riversnow.xyz',
-  areaServed: ['宣城', '芜湖', '合肥', '南京'],
+  areaServed: ['宁国', '宣城', '芜湖', '绩溪', '泾县', '旌德', '郎溪'],
   priceRange: '¥¥',
+  telephone: '', // 如有电话可添加
+  email: 'riversnow.xyz@gmail.com',
+  sameAs: [
+    'https://github.com/yourgithub', // 替换为您的 GitHub 链接
+  ],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: '宁国本地开发服务',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: '宁国本地网站搭建',
+          description: '宁国本地个人网站搭建、企业官网制作、电商网站开发',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: '宁国本地小程序开发',
+          description:
+            '宁国本地微信小程序开发、支付宝小程序开发、企业小程序定制',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: '宁国本地DApp开发',
+          description: '宁国本地区块链应用开发、DApp开发、智能合约开发',
+        },
+      },
+    ],
+  },
 }
 
 export const metadata: Metadata = {
-  title: 'Web3 开发者 | 安徽宣城软件开发工程师',
+  metadataBase: new URL('https://www.riversnow.xyz'),
+  title: '宁国本地网站小程序开发 | 安徽宁国软件开发工程师',
   description:
-    '宣城本地专业的Web3全栈开发工程师，专注于区块链技术、智能合约开发和DApp应用开发，为皖南地区企业提供完整的区块链解决方案。',
+    '宁国本地专业网站搭建、小程序开发服务，提供宁国本地企业网站制作、宁国个人网站搭建、宁国微信小程序开发、宁国电商网站建设及区块链应用开发服务。本地工程师，快速响应，专业可靠。',
   keywords: [
-    'Web3开发',
-    '宣城软件开发',
-    '安徽区块链',
-    '宣城程序员',
-    '皖南IT服务',
-    '全栈开发',
+    '宁国本地网站搭建',
+    '宁国本地小程序开发',
+    '宁国企业网站制作',
+    '宁国个人网站开发',
+    '宁国网站建设',
+    '宁国微信小程序',
+    '宁国电商网站',
+    '宁国软件开发',
+    '宁国网站开发公司',
+    '宁国网页设计',
+    '宁国dapp开发',
+    '宁国区块链开发',
+    '宁国本地技术外包',
+    '宁国网站制作价格',
+    '宁国专业网站定制',
+    '宁国企业小程序',
+    '宁国响应式网站',
+    '宁国网站SEO优化',
+    '宁国本地开发者',
     '宣城网站开发',
-    '区块链工程师',
-    '宣城技术外包',
-    '安徽软件开发',
   ],
-  authors: [{ name: 'Snow' }],
+  authors: [{ name: 'Snow', url: 'https://www.riversnow.xyz' }],
+  creator: 'Snow',
+  publisher: 'Snow',
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
@@ -72,23 +130,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'zh_CN',
     url: 'https://www.riversnow.xyz',
-    siteName: 'Web3 开发者 - Snow',
-    title: 'Web3 开发者 | 安徽宣城软件开发工程师',
+    siteName: '宁国本地网站小程序开发 - Snow',
+    title: '宁国本地网站小程序开发 | 安徽宁国软件开发工程师',
     description:
-      '宣城本地专业的Web3全栈开发工程师，为企业提供区块链技术解决方案。',
+      '宁国本地专业网站搭建、小程序开发服务，提供宁国本地企业网站制作、个人网站搭建、微信小程序开发、电商网站建设服务。',
     images: [
       {
         url: 'https://www.riversnow.xyz/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: '宣城Web3开发服务',
+        alt: '宁国网站小程序开发服务',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Web3 开发者 | 安徽宣城软件开发工程师',
-    description: '宣城本地专业的Web3全栈开发工程师，提供区块链技术解决方案。',
+    title: '宁国本地网站小程序开发 | 安徽宁国软件开发工程师',
+    description:
+      '宁国本地专业网站搭建、小程序开发服务，提供企业网站制作、个人网站搭建、微信小程序开发服务。',
     images: ['/og-image.jpg'],
     creator: '@yourtwitter',
     site: '@yourtwitter',
@@ -101,8 +160,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' }, // 主 SVG favicon
-      // 可选：为兼容性提供备用 .ico 或 .png
+      { url: '/favicon.svg', type: 'image/svg+xml' },
       { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
     ],
