@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 import HeroAnimation from '@/components/HeroAnimation'
 import ContactCTA from '@/components/ContactCTA'
+import ProjectCase from '@/components/ProjectCase'
+import CertificationCard from '@/components/CertificationCard' // Added import for CertificationCard
 
 export default function Home() {
   const { language } = useLanguage()
@@ -128,6 +130,75 @@ export default function Home() {
             description: '优化电商平台性能，提升用户体验和系统稳定性。',
           },
         ],
+      },
+      featuredProjects: { // Added featured projects for Chinese
+        title: '精选项目',
+        items: [
+          {
+            title: '企业管理系统',
+            description:
+              '基于 React + Node.js 的全栈企业管理系统，包含用户管理、权限控制、数据可视化等功能。采用微服务架构，支持高并发访问。',
+            image: '/projects/enterprise.jpg',
+            technologies: ['React', 'Node.js', 'TypeScript', 'MySQL', 'Docker'],
+            link: 'https://example.com/project',
+            github: 'https://github.com/yourusername/enterprise',
+            highlights: ['微服务架构', '权限管理', '数据可视化', '高并发支持'],
+          },
+          {
+            title: '电商平台',
+            description:
+              '现代化的电商平台，支持商品管理、订单处理、支付集成、库存管理等功能。采用响应式设计，支持多端访问。',
+            image: '/projects/ecommerce.jpg',
+            technologies: ['Next.js', 'Python', 'PostgreSQL', 'Redis', 'AWS'],
+            link: 'https://example.com/project',
+            github: 'https://github.com/yourusername/ecommerce',
+            highlights: ['响应式设计', '支付集成', '库存管理', '性能优化'],
+          },
+          {
+            title: '去中心化交易所',
+            description:
+              '基于以太坊的 DEX 平台，支持代币交换和流动性提供。实现了 AMM 机制和闪电贷功能。',
+            image: '/projects/dex.jpg',
+            technologies: ['Solidity', 'React', 'Web3.js', 'Uniswap V2'],
+            link: 'https://example.com/project',
+            github: 'https://github.com/yourusername/dex',
+            highlights: ['AMM 机制', '闪电贷', '流动性挖矿'],
+          },
+        ],
+        cta: '查看所有项目',
+      },
+      certifications: { // Added certifications for Chinese
+        title: '专业认证',
+        items: [
+          {
+            title: 'Solidity 开发认证',
+            issuer: 'Ethereum Foundation',
+            date: '2024-02',
+            image: '/certifications/solidity.jpg',
+            link: 'https://example.com/cert',
+            description:
+              '完成以太坊基金会认证的 Solidity 开发课程，掌握智能合约开发最佳实践。',
+          },
+          {
+            title: '智能合约安全审计',
+            issuer: 'OpenZeppelin',
+            date: '2024-01',
+            image: '/certifications/security.jpg',
+            link: 'https://example.com/cert',
+            description:
+              '获得 OpenZeppelin 智能合约安全审计认证，专注于 DeFi 协议安全。',
+          },
+          {
+            title: 'Web3 开发专家',
+            issuer: 'ConsenSys Academy',
+            date: '2023-12',
+            image: '/certifications/web3.jpg',
+            link: 'https://example.com/cert',
+            description:
+              '完成 ConsenSys Academy 的 Web3 开发课程，掌握完整的区块链开发生态系统。',
+          },
+        ],
+        cta: '查看所有认证',
       },
     },
     en: {
@@ -257,6 +328,85 @@ export default function Home() {
           },
         ],
       },
+      featuredProjects: { // Added featured projects for English
+        title: 'Featured Projects',
+        items: [
+          {
+            title: 'Enterprise Management System',
+            description:
+              'Full-stack enterprise management system based on React + Node.js, featuring user management, access control, and data visualization. Built with microservices architecture for high concurrency support.',
+            image: '/projects/enterprise.jpg',
+            technologies: ['React', 'Node.js', 'TypeScript', 'MySQL', 'Docker'],
+            link: 'https://example.com/project',
+            github: 'https://github.com/yourusername/enterprise',
+            highlights: [
+              'Microservices',
+              'Access Control',
+              'Data Visualization',
+              'High Concurrency',
+            ],
+          },
+          {
+            title: 'E-commerce Platform',
+            description:
+              'Modern e-commerce platform supporting product management, order processing, payment integration, and inventory management. Features responsive design for multi-device access.',
+            image: '/projects/ecommerce.jpg',
+            technologies: ['Next.js', 'Python', 'PostgreSQL', 'Redis', 'AWS'],
+            link: 'https://example.com/project',
+            github: 'https://github.com/yourusername/ecommerce',
+            highlights: [
+              'Responsive Design',
+              'Payment Integration',
+              'Inventory Management',
+              'Performance Optimization',
+            ],
+          },
+          {
+            title: 'Decentralized Exchange',
+            description:
+              'Ethereum-based DEX platform supporting token swaps and liquidity provision. Implements AMM mechanism and flash loans.',
+            image: '/projects/dex.jpg',
+            technologies: ['Solidity', 'React', 'Web3.js', 'Uniswap V2'],
+            link: 'https://example.com/project',
+            github: 'https://github.com/yourusername/dex',
+            highlights: ['AMM Mechanism', 'Flash Loans', 'Liquidity Mining'],
+          },
+        ],
+        cta: 'View All Projects',
+      },
+      certifications: { // Added certifications for English
+        title: 'Certifications',
+        items: [
+          {
+            title: 'Solidity Development',
+            issuer: 'Ethereum Foundation',
+            date: '2024-02',
+            image: '/certifications/solidity.jpg',
+            link: 'https://example.com/cert',
+            description:
+              'Completed Ethereum Foundation certified Solidity development course, mastering smart contract development best practices.',
+          },
+          {
+            title: 'Smart Contract Security Audit',
+            issuer: 'OpenZeppelin',
+            date: '2024-01',
+            image: '/certifications/security.jpg',
+            link: 'https://example.com/cert',
+            description:
+              'Obtained OpenZeppelin smart contract security audit certification, focusing on DeFi protocol security.',
+          },
+          {
+            title: 'Web3 Development Expert',
+            issuer: 'ConsenSys Academy',
+            date: '2023-12',
+            image: '/certifications/web3.jpg',
+            link: 'https://example.com/cert',
+            description:
+              'Completed ConsenSys Academy Web3 development course, mastering the complete blockchain development ecosystem.',
+          },
+        ],
+        cta: 'View All Certifications',
+      },
     },
   }
 
@@ -354,15 +504,24 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">
             {content[language].skills.title}
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {content[language].skills.categories.map((category) => (
               <div
                 key={category.category}
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-all transform hover:-translate-y-1">
-                <div className="text-4xl mb-4">{category.icon}</div>
-                <h3 className="text-xl font-semibold dark:text-white">
-                  {category.category}
-                </h3>
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1">
+                <div className="flex items-center mb-4">
+                  <div className="text-4xl mr-4">{category.icon}</div>
+                  <h3 className="text-xl font-semibold dark:text-white">
+                    {category.category}
+                  </h3>
+                </div>
+                <ul className="space-y-2 text-left">
+                  {category.items.map((skill) => (
+                    <li key={skill} className="text-gray-700 dark:text-gray-300">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -391,6 +550,48 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            {content[language].featuredProjects.title}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {content[language].featuredProjects.items.map((project) => (
+              <ProjectCase key={project.title} {...project} />
+            ))}
+          </div>
+          <div className="text-center">
+            <Link
+              href="/projects"
+              className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all transform hover:scale-105">
+              {content[language].featuredProjects.cta}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            {content[language].certifications.title}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {content[language].certifications.items.map((certification) => (
+              <CertificationCard key={certification.title} {...certification} />
+            ))}
+          </div>
+          <div className="text-center">
+            <Link
+              href="/skills#certifications"
+              className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all transform hover:scale-105">
+              {content[language].certifications.cta}
+            </Link>
           </div>
         </div>
       </section>
