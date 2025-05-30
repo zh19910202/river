@@ -434,9 +434,10 @@ export default function Skills() {
 
           {/* 技能分组 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {/* Development Skills */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all transform hover:-translate-y-1">
               <h3 className="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400 flex items-center">
-                <span className="mr-2">💻</span>
+                <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 {language === 'zh' ? '开发技能' : 'Development Skills'}
               </h3>
               <div className="space-y-4">
@@ -458,12 +459,12 @@ export default function Skills() {
                           </span>
                         </div>
                         <div className="text-right">
-                          <span className="text-xs font-semibold inline-block text-blue-600 dark:text-blue-400">
+                          <span className="text-xs font-semibold inline-block text-gray-700 dark:text-gray-300"> {/* Neutral percentage color */}
                             {skill.level}%
                           </span>
                         </div>
                       </div>
-                      <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200 dark:bg-gray-700">
+                      <div className="overflow-hidden h-3 text-xs flex rounded bg-gray-200 dark:bg-gray-700"> {/* Thicker progress bar h-3 */}
                         <div
                           style={{
                             width: `${skill.level}%`,
@@ -476,9 +477,10 @@ export default function Skills() {
               </div>
             </div>
 
+            {/* Blockchain Skills */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all transform hover:-translate-y-1">
               <h3 className="text-xl font-semibold mb-4 text-teal-600 dark:text-teal-400 flex items-center">
-                <span className="mr-2">⛓️</span>
+                <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
                 {language === 'zh' ? '区块链技能' : 'Blockchain Skills'}
               </h3>
               <div className="space-y-4">
@@ -498,12 +500,12 @@ export default function Skills() {
                           </span>
                         </div>
                         <div className="text-right">
-                          <span className="text-xs font-semibold inline-block text-teal-600 dark:text-teal-400">
+                          <span className="text-xs font-semibold inline-block text-gray-700 dark:text-gray-300"> {/* Neutral percentage color */}
                             {skill.level}%
                           </span>
                         </div>
                       </div>
-                      <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200 dark:bg-gray-700">
+                      <div className="overflow-hidden h-3 text-xs flex rounded bg-gray-200 dark:bg-gray-700"> {/* Thicker progress bar h-3 */}
                         <div
                           style={{
                             width: `${skill.level}%`,
@@ -516,9 +518,10 @@ export default function Skills() {
               </div>
             </div>
 
+            {/* Database Skills */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all transform hover:-translate-y-1">
               <h3 className="text-xl font-semibold mb-4 text-amber-600 dark:text-amber-400 flex items-center">
-                <span className="mr-2">🗄️</span>
+                <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12v6a2 2 0 002 2h10a2 2 0 002-2v-6" /></svg>
                 {language === 'zh' ? '数据库技能' : 'Database Skills'}
               </h3>
               <div className="space-y-4">
@@ -536,12 +539,12 @@ export default function Skills() {
                           </span>
                         </div>
                         <div className="text-right">
-                          <span className="text-xs font-semibold inline-block text-amber-600 dark:text-amber-400">
+                          <span className="text-xs font-semibold inline-block text-gray-700 dark:text-gray-300"> {/* Neutral percentage color */}
                             {skill.level}%
                           </span>
                         </div>
                       </div>
-                      <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200 dark:bg-gray-700">
+                      <div className="overflow-hidden h-3 text-xs flex rounded bg-gray-200 dark:bg-gray-700"> {/* Thicker progress bar h-3 */}
                         <div
                           style={{
                             width: `${skill.level}%`,
@@ -554,9 +557,10 @@ export default function Skills() {
               </div>
             </div>
 
+            {/* DevOps Skills */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all transform hover:-translate-y-1">
               <h3 className="text-xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400 flex items-center">
-                <span className="mr-2">🚀</span>
+                <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                 {language === 'zh' ? 'DevOps 技能' : 'DevOps Skills'}
               </h3>
               <div className="space-y-4">
@@ -574,12 +578,12 @@ export default function Skills() {
                           </span>
                         </div>
                         <div className="text-right">
-                          <span className="text-xs font-semibold inline-block text-indigo-600 dark:text-indigo-400">
+                          <span className="text-xs font-semibold inline-block text-gray-700 dark:text-gray-300"> {/* Neutral percentage color */}
                             {skill.level}%
                           </span>
                         </div>
                       </div>
-                      <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200 dark:bg-gray-700">
+                      <div className="overflow-hidden h-3 text-xs flex rounded bg-gray-200 dark:bg-gray-700"> {/* Thicker progress bar h-3 */}
                         <div
                           style={{
                             width: `${skill.level}%`,

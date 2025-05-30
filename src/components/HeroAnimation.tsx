@@ -71,16 +71,7 @@ const HeroAnimation = () => {
         ctx.fill()
       })
 
-      // 绘制文字
-      ctx.font = 'bold 48px Inter'
-      ctx.textAlign = 'center'
-      ctx.textBaseline = 'middle'
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.1)'
-      texts[language].forEach((text, index) => {
-        const x = canvas.width / 2
-        const y = canvas.height / 2 + (index - 1) * 60
-        ctx.fillText(text, x, y)
-      })
+      // All text drawing code removed
 
       requestAnimationFrame(animate)
     }

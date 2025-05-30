@@ -1,6 +1,6 @@
 # myself
 
-A personal portfolio website built with Next.js, TypeScript, and Tailwind CSS to showcase skills, projects, and certifications.
+A professional personal portfolio website built with Next.js, TypeScript, and Tailwind CSS, designed to comprehensively showcase skills, projects, and certifications.
 
 ## Technologies Used
 

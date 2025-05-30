@@ -7,6 +7,7 @@ interface TimelineItem {
   title: string
   description: string
   icon: string
+  achievements?: string[] // Added achievements
 }
 
 interface TimelineProps {
@@ -52,14 +53,32 @@ const Timeline = ({ items }: TimelineProps) => {
               </h3>
 
               {/* 描述 */}
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300 mb-3"> {/* Added mb-3 */}
                 {item.description}
               </p>
 
+              {/* Achievements */}
+              {item.achievements && item.achievements.length > 0 && (
+                <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                  <h5 className="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2">
+                    {language === 'zh' ? '主要成就:' : 'Key Achievements:'}
+                  </h5>
+                  <div className="flex flex-wrap gap-2">
+                    {item.achievements.map((achievement, achIndex) => (
+                      <span
+                        key={achIndex}
+                        className="px-2 py-1 text-xs bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 rounded-full">
+                        {achievement}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* 图标 */}
               <div
-                className={`absolute top-1/2 transform -translate-y-1/2 text-2xl ${
-                  index % 2 === 0 ? '-right-12' : '-left-12'
+                className={`absolute top-1/2 transform -translate-y-1/2 text-xl p-2 bg-gray-100 dark:bg-gray-700 rounded-full shadow-md ${ /* Icon styling */
+                  index % 2 === 0 ? '-right-12 md:-right-14' : '-left-12 md:-left-14'  /* Adjusted positioning */
                 }`}>
                 {item.icon}
               </div>
