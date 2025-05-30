@@ -24,9 +24,9 @@ export default function Home() {
       about: {
         title: '关于我',
         description: [
-          '作为一名全栈开发专家，我专注于企业级应用开发和区块链技术。',
-          '我擅长设计和实现高性能、可扩展的系统，具有丰富的企业应用和区块链项目开发经验。',
-          '在传统开发和区块链领域都拥有多年经验，我参与过多个成功的企业管理系统、电商平台、数据分析系统，以及 DeFi 项目开发。',
+          "作为一名全栈开发专家，我专注于企业级应用与区块链技术的深度融合与创新。",
+          "我精通设计与实现高性能、可扩展的系统架构，此专长源于我在企业级应用与区块链项目中的丰富实战经验。",
+          "融汇多年在传统开发及区块链领域的实践经验，我成功主导并交付了众多复杂的企业管理系统、电商平台、数据分析解决方案以及前沿的DeFi应用。"
         ],
       },
       skills: {
@@ -214,9 +214,9 @@ export default function Home() {
       about: {
         title: 'About Me',
         description: [
-          'As a full-stack development expert, I focus on enterprise applications and blockchain technology.',
-          'I excel in designing and implementing high-performance, scalable systems, with extensive experience in enterprise applications and blockchain project development.',
-          'With years of experience in both traditional development and blockchain, I have participated in the development of multiple successful enterprise management systems, e-commerce platforms, data analytics systems, and DeFi projects.',
+          "As a full-stack development expert, I specialize in enterprise applications and blockchain technology.",
+          "I excel at designing and implementing high-performance, scalable systems, drawing on extensive experience in both enterprise and blockchain project development.",
+          "Leveraging years of experience in traditional and blockchain development, I have a proven track record of delivering successful enterprise management systems, e-commerce platforms, data analytics solutions, and innovative DeFi projects."
         ],
       },
       skills: {
@@ -443,7 +443,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl blur-3xl" />
               <div className="relative bg-white/10 rounded-2xl w-full h-full flex items-center justify-center backdrop-blur-sm p-8">
                 <div className="grid grid-cols-2 gap-4 w-full h-full p-4">
-                  <div className="bg-white/20 rounded-xl backdrop-blur-sm flex items-center justify-center group hover:bg-white/30 transition-all">
+                  <div className="bg-white/20 rounded-xl backdrop-blur-sm flex items-center justify-center group hover:bg-white/30 transition-all duration-300 ease-in-out transform hover:scale-105">
                     <div className="text-center">
                       <div className="font-mono text-lg mb-2">
                         {'<Solidity />'}
@@ -451,7 +451,7 @@ export default function Home() {
                       <div className="text-sm opacity-80">Smart Contracts</div>
                     </div>
                   </div>
-                  <div className="bg-white/20 rounded-xl backdrop-blur-sm flex items-center justify-center group hover:bg-white/30 transition-all">
+                  <div className="bg-white/20 rounded-xl backdrop-blur-sm flex items-center justify-center group hover:bg-white/30 transition-all duration-300 ease-in-out transform hover:scale-105">
                     <div className="text-center">
                       <div className="font-mono text-lg mb-2">
                         {'<Web3.js />'}
@@ -459,13 +459,13 @@ export default function Home() {
                       <div className="text-sm opacity-80">DApp Development</div>
                     </div>
                   </div>
-                  <div className="bg-white/20 rounded-xl backdrop-blur-sm flex items-center justify-center group hover:bg-white/30 transition-all">
+                  <div className="bg-white/20 rounded-xl backdrop-blur-sm flex items-center justify-center group hover:bg-white/30 transition-all duration-300 ease-in-out transform hover:scale-105">
                     <div className="text-center">
                       <div className="font-mono text-lg mb-2">{'<DeFi />'}</div>
                       <div className="text-sm opacity-80">Protocols</div>
                     </div>
                   </div>
-                  <div className="bg-white/20 rounded-xl backdrop-blur-sm flex items-center justify-center group hover:bg-white/30 transition-all">
+                  <div className="bg-white/20 rounded-xl backdrop-blur-sm flex items-center justify-center group hover:bg-white/30 transition-all duration-300 ease-in-out transform hover:scale-105">
                     <div className="text-center">
                       <div className="font-mono text-lg mb-2">
                         {'<Security />'}
@@ -515,9 +515,9 @@ export default function Home() {
                     {category.category}
                   </h3>
                 </div>
-                <ul className="space-y-2 text-left">
+                <ul className="flex flex-wrap gap-2 mt-4">
                   {category.items.map((skill) => (
-                    <li key={skill} className="text-gray-700 dark:text-gray-300">
+                    <li key={skill} className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 px-3 py-1 rounded-full text-sm font-medium">
                       {skill}
                     </li>
                   ))}

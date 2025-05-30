@@ -26,7 +26,7 @@ const ProjectCase = ({
   const { language } = useLanguage()
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full">
+    <div className="group bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full"> {/* Added "group" */}
       <div className="relative h-48">
         <Image
           src={image}
@@ -43,7 +43,7 @@ const ProjectCase = ({
       </div>
 
       <div className="p-6 flex-grow">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3"> {/* Changed to text-2xl and mb-3 */}
           {title}
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
@@ -52,13 +52,15 @@ const ProjectCase = ({
 
         {highlights && highlights.length > 0 && (
           <div className="mb-4">
-            <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2">
+            <h4 className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2"> {/* Changed to text-base */}
               {language === 'zh' ? '项目亮点' : 'Highlights'}
             </h4>
-            <ul className="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 space-y-1">
+            <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300"> {/* Removed list-disc list-inside */}
               {highlights.map((highlight, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="text-blue-500 mr-2">✓</span>
+                  <svg className="w-5 h-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"> {/* Increased icon size to w-5 h-5, adjusted mt */}
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
                   <span>{highlight}</span>
                 </li>
               ))}
